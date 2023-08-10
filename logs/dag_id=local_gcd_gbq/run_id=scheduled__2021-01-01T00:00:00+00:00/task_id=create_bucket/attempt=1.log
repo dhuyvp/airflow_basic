@@ -1,0 +1,26 @@
+[2023-08-08T09:40:50.413+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: local_gcd_gbq.create_bucket scheduled__2021-01-01T00:00:00+00:00 [queued]>
+[2023-08-08T09:40:50.425+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: local_gcd_gbq.create_bucket scheduled__2021-01-01T00:00:00+00:00 [queued]>
+[2023-08-08T09:40:50.425+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-08-08T09:40:50.443+0000] {taskinstance.py:1327} INFO - Executing <Task(GCSCreateBucketOperator): create_bucket> on 2021-01-01 00:00:00+00:00
+[2023-08-08T09:40:50.453+0000] {standard_task_runner.py:57} INFO - Started process 84 to run task
+[2023-08-08T09:40:50.456+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'local_gcd_gbq', 'create_bucket', 'scheduled__2021-01-01T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/example_gcs_upload_download.py', '--cfg-path', '/tmp/tmp591h7dr9']
+[2023-08-08T09:40:50.458+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask create_bucket
+[2023-08-08T09:40:50.513+0000] {task_command.py:410} INFO - Running <TaskInstance: local_gcd_gbq.create_bucket scheduled__2021-01-01T00:00:00+00:00 [running]> on host eb6c146e2e2c
+[2023-08-08T09:40:50.590+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='local_gcd_gbq' AIRFLOW_CTX_TASK_ID='create_bucket' AIRFLOW_CTX_EXECUTION_DATE='2021-01-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2021-01-01T00:00:00+00:00'
+[2023-08-08T09:40:50.609+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/gcs.py", line 137, in execute
+    impersonation_chain=self.impersonation_chain,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 165, in __init__
+    impersonation_chain=impersonation_chain,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 234, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 463, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `google_cloud_default` isn't defined
+[2023-08-08T09:40:50.614+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=local_gcd_gbq, task_id=create_bucket, execution_date=20210101T000000, start_date=20230808T094050, end_date=20230808T094050
+[2023-08-08T09:40:50.628+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 4 for task create_bucket (The conn_id `google_cloud_default` isn't defined; 84)
+[2023-08-08T09:40:50.668+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-08-08T09:40:50.708+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

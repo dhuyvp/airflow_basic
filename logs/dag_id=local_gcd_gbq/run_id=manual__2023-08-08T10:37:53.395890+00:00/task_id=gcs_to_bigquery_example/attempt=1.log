@@ -1,0 +1,26 @@
+[2023-08-08T10:37:57.068+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: local_gcd_gbq.gcs_to_bigquery_example manual__2023-08-08T10:37:53.395890+00:00 [queued]>
+[2023-08-08T10:37:57.075+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: local_gcd_gbq.gcs_to_bigquery_example manual__2023-08-08T10:37:53.395890+00:00 [queued]>
+[2023-08-08T10:37:57.075+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-08-08T10:37:57.086+0000] {taskinstance.py:1327} INFO - Executing <Task(GCSToBigQueryOperator): gcs_to_bigquery_example> on 2023-08-08 10:37:53.395890+00:00
+[2023-08-08T10:37:57.092+0000] {standard_task_runner.py:57} INFO - Started process 495 to run task
+[2023-08-08T10:37:57.094+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'local_gcd_gbq', 'gcs_to_bigquery_example', 'manual__2023-08-08T10:37:53.395890+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/example_gcs_upload_download.py', '--cfg-path', '/tmp/tmpswqvgwiv']
+[2023-08-08T10:37:57.095+0000] {standard_task_runner.py:85} INFO - Job 29: Subtask gcs_to_bigquery_example
+[2023-08-08T10:37:57.123+0000] {task_command.py:410} INFO - Running <TaskInstance: local_gcd_gbq.gcs_to_bigquery_example manual__2023-08-08T10:37:53.395890+00:00 [running]> on host eb6c146e2e2c
+[2023-08-08T10:37:57.178+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='local_gcd_gbq' AIRFLOW_CTX_TASK_ID='gcs_to_bigquery_example' AIRFLOW_CTX_EXECUTION_DATE='2023-08-08T10:37:53.395890+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-08-08T10:37:53.395890+00:00'
+[2023-08-08T10:37:57.191+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 319, in execute
+    impersonation_chain=self.impersonation_chain,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 112, in __init__
+    impersonation_chain=impersonation_chain,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 234, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 463, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `google_cloud_default` isn't defined
+[2023-08-08T10:37:57.194+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=local_gcd_gbq, task_id=gcs_to_bigquery_example, execution_date=20230808T103753, start_date=20230808T103757, end_date=20230808T103757
+[2023-08-08T10:37:57.201+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 29 for task gcs_to_bigquery_example (The conn_id `google_cloud_default` isn't defined; 495)
+[2023-08-08T10:37:57.226+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-08-08T10:37:57.245+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

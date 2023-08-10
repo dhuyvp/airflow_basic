@@ -1,0 +1,19 @@
+[2023-08-08T10:15:41.388+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: local_gcd_gbq.upload_file manual__2023-08-08T10:15:39.458791+00:00 [queued]>
+[2023-08-08T10:15:41.396+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: local_gcd_gbq.upload_file manual__2023-08-08T10:15:39.458791+00:00 [queued]>
+[2023-08-08T10:15:41.396+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-08-08T10:15:41.405+0000] {taskinstance.py:1327} INFO - Executing <Task(LocalFilesystemToGCSOperator): upload_file> on 2023-08-08 10:15:39.458791+00:00
+[2023-08-08T10:15:41.410+0000] {standard_task_runner.py:57} INFO - Started process 84 to run task
+[2023-08-08T10:15:41.412+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'local_gcd_gbq', 'upload_file', 'manual__2023-08-08T10:15:39.458791+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/example_gcs_upload_download.py', '--cfg-path', '/tmp/tmpuwv5zyd4']
+[2023-08-08T10:15:41.414+0000] {standard_task_runner.py:85} INFO - Job 20: Subtask upload_file
+[2023-08-08T10:15:41.442+0000] {task_command.py:410} INFO - Running <TaskInstance: local_gcd_gbq.upload_file manual__2023-08-08T10:15:39.458791+00:00 [running]> on host eb6c146e2e2c
+[2023-08-08T10:15:41.493+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='local_gcd_gbq' AIRFLOW_CTX_TASK_ID='upload_file' AIRFLOW_CTX_EXECUTION_DATE='2023-08-08T10:15:39.458791+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-08-08T10:15:39.458791+00:00'
+[2023-08-08T10:15:41.500+0000] {base.py:73} INFO - Using connection ID 'admin' for task execution.
+[2023-08-08T10:15:41.502+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/transfers/local_to_gcs.py", line 98, in execute
+    raise FileNotFoundError(self.src)
+FileNotFoundError: /opt/***/resources/mock_users.csv
+[2023-08-08T10:15:41.507+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=local_gcd_gbq, task_id=upload_file, execution_date=20230808T101539, start_date=20230808T101541, end_date=20230808T101541
+[2023-08-08T10:15:41.514+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 20 for task upload_file (/opt/***/resources/mock_users.csv; 84)
+[2023-08-08T10:15:41.544+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-08-08T10:15:41.567+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

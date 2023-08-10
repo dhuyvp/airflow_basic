@@ -1,0 +1,135 @@
+[2023-08-08T10:29:08.774+0000] {processor.py:157} INFO - Started process (PID=1925) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:29:08.775+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:29:08.776+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:29:08.776+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:29:08.782+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_gcd_gbq']) retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:29:08.869+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:29:08.868+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2023-08-08T10:29:08.886+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:29:08.886+0000] {dag.py:3508} INFO - Setting next_dagrun for local_gcd_gbq to None, run_after=None
+[2023-08-08T10:29:08.900+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.129 seconds
+[2023-08-08T10:29:22.861+0000] {processor.py:157} INFO - Started process (PID=1927) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:29:22.862+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:29:22.864+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:29:22.864+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:29:22.870+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_gcd_gbq']) retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:29:22.879+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:29:22.878+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2023-08-08T10:29:22.900+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:29:22.900+0000] {dag.py:3508} INFO - Setting next_dagrun for local_gcd_gbq to None, run_after=None
+[2023-08-08T10:29:22.913+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.054 seconds
+[2023-08-08T10:29:49.566+0000] {processor.py:157} INFO - Started process (PID=1982) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:29:49.567+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:29:49.569+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:29:49.569+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:29:49.575+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:29:49.574+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/gcs/example_gcs_to_bigquery.py", line 94, in <module>
+    write_disposition="WRITE_TRUNCATE",
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 412, in apply_defaults
+    raise AirflowException(f"missing keyword argument {missing_args.pop()!r}")
+airflow.exceptions.AirflowException: missing keyword argument 'source_objects'
+[2023-08-08T10:29:49.576+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:29:49.589+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.026 seconds
+[2023-08-08T10:29:54.759+0000] {processor.py:157} INFO - Started process (PID=1987) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:29:54.759+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:29:54.761+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:29:54.761+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:29:54.767+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_gcd_gbq']) retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:29:54.776+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:29:54.776+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2023-08-08T10:29:54.794+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:29:54.794+0000] {dag.py:3508} INFO - Setting next_dagrun for local_gcd_gbq to None, run_after=None
+[2023-08-08T10:29:54.808+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.052 seconds
+[2023-08-08T10:30:18.881+0000] {processor.py:157} INFO - Started process (PID=2039) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:30:18.881+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:30:18.883+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:30:18.883+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:30:18.890+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_gcd_gbq']) retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:30:18.971+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:30:18.970+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2023-08-08T10:30:18.988+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:30:18.987+0000] {dag.py:3508} INFO - Setting next_dagrun for local_gcd_gbq to None, run_after=None
+[2023-08-08T10:30:19.002+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.124 seconds
+[2023-08-08T10:30:49.267+0000] {processor.py:157} INFO - Started process (PID=2095) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:30:49.269+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:30:49.272+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:30:49.271+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:30:49.278+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_gcd_gbq']) retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:30:49.294+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:30:49.293+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2023-08-08T10:30:49.310+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:30:49.309+0000] {dag.py:3508} INFO - Setting next_dagrun for local_gcd_gbq to None, run_after=None
+[2023-08-08T10:30:49.321+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.059 seconds
+[2023-08-08T10:31:19.880+0000] {processor.py:157} INFO - Started process (PID=2151) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:31:19.881+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:31:19.883+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:31:19.883+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:31:19.889+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_gcd_gbq']) retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:31:19.898+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:31:19.897+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2023-08-08T10:31:19.914+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:31:19.914+0000] {dag.py:3508} INFO - Setting next_dagrun for local_gcd_gbq to None, run_after=None
+[2023-08-08T10:31:19.926+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.049 seconds
+[2023-08-08T10:31:24.920+0000] {processor.py:157} INFO - Started process (PID=2152) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:31:24.920+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:31:24.922+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:31:24.922+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:31:24.927+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:31:24.926+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/gcs/example_gcs_to_bigquery.py", line 93, in <module>
+    id,first_name,last_name,email,gender,ip_address
+NameError: name 'first_name' is not defined
+[2023-08-08T10:31:24.927+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:31:24.940+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.022 seconds
+[2023-08-08T10:31:55.358+0000] {processor.py:157} INFO - Started process (PID=2208) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:31:55.359+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:31:55.361+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:31:55.361+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:31:55.365+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:31:55.364+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/gcs/example_gcs_to_bigquery.py", line 93, in <module>
+    id,first_name,last_name,email,gender,ip_address
+NameError: name 'first_name' is not defined
+[2023-08-08T10:31:55.365+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:31:55.381+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.026 seconds
+[2023-08-08T10:32:06.826+0000] {processor.py:157} INFO - Started process (PID=2263) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:32:06.827+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:32:06.829+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:32:06.829+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:32:06.835+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:32:06.834+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/gcs/example_gcs_to_bigquery.py", line 98, in <module>
+    id,first_name,last_name,email,gender,ip_address
+NameError: name 'first_name' is not defined
+[2023-08-08T10:32:06.835+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:32:06.880+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.058 seconds
+[2023-08-08T10:32:10.863+0000] {processor.py:157} INFO - Started process (PID=2264) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:32:10.863+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:32:10.865+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:32:10.865+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:32:10.872+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_gcd_gbq']) retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:32:10.954+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:32:10.953+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2023-08-08T10:32:10.973+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:32:10.973+0000] {dag.py:3508} INFO - Setting next_dagrun for local_gcd_gbq to None, run_after=None
+[2023-08-08T10:32:10.988+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.128 seconds
+[2023-08-08T10:32:17.961+0000] {processor.py:157} INFO - Started process (PID=2266) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:32:17.962+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:32:17.964+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:32:17.964+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:32:17.970+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_gcd_gbq']) retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:32:17.979+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:32:17.978+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2023-08-08T10:32:17.996+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:32:17.996+0000] {dag.py:3508} INFO - Setting next_dagrun for local_gcd_gbq to None, run_after=None
+[2023-08-08T10:32:18.010+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.051 seconds
+[2023-08-08T10:32:48.710+0000] {processor.py:157} INFO - Started process (PID=2326) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:32:48.711+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:32:48.712+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:32:48.712+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:32:48.719+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_gcd_gbq']) retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:32:48.728+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:32:48.727+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2023-08-08T10:32:48.747+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:32:48.747+0000] {dag.py:3508} INFO - Setting next_dagrun for local_gcd_gbq to None, run_after=None
+[2023-08-08T10:32:48.759+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.052 seconds
+[2023-08-08T10:33:19.270+0000] {processor.py:157} INFO - Started process (PID=2382) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:33:19.271+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:33:19.273+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:33:19.273+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:33:19.279+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_gcd_gbq']) retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:33:19.357+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:33:19.357+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2023-08-08T10:33:19.374+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:33:19.373+0000] {dag.py:3508} INFO - Setting next_dagrun for local_gcd_gbq to None, run_after=None
+[2023-08-08T10:33:19.387+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.118 seconds
+[2023-08-08T10:33:49.688+0000] {processor.py:157} INFO - Started process (PID=2438) to work on /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:33:49.688+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/gcs/example_gcs_to_bigquery.py for tasks to queue
+[2023-08-08T10:33:49.690+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:33:49.690+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:33:49.695+0000] {processor.py:836} INFO - DAG(s) dict_keys(['local_gcd_gbq']) retrieved from /opt/airflow/dags/gcs/example_gcs_to_bigquery.py
+[2023-08-08T10:33:49.710+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:33:49.709+0000] {dag.py:2742} INFO - Sync 1 DAGs
+[2023-08-08T10:33:49.725+0000] {logging_mixin.py:150} INFO - [2023-08-08T10:33:49.725+0000] {dag.py:3508} INFO - Setting next_dagrun for local_gcd_gbq to None, run_after=None
+[2023-08-08T10:33:49.736+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/gcs/example_gcs_to_bigquery.py took 0.051 seconds

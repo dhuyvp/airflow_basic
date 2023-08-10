@@ -1,0 +1,79 @@
+[2023-08-08T10:18:18.713+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: local_gcd_gbq.upload_file manual__2023-08-08T10:18:17.524123+00:00 [queued]>
+[2023-08-08T10:18:18.721+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: local_gcd_gbq.upload_file manual__2023-08-08T10:18:17.524123+00:00 [queued]>
+[2023-08-08T10:18:18.721+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-08-08T10:18:18.731+0000] {taskinstance.py:1327} INFO - Executing <Task(LocalFilesystemToGCSOperator): upload_file> on 2023-08-08 10:18:17.524123+00:00
+[2023-08-08T10:18:18.736+0000] {standard_task_runner.py:57} INFO - Started process 132 to run task
+[2023-08-08T10:18:18.738+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'local_gcd_gbq', 'upload_file', 'manual__2023-08-08T10:18:17.524123+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/example_gcs_upload_download.py', '--cfg-path', '/tmp/tmp_io3oiuf']
+[2023-08-08T10:18:18.740+0000] {standard_task_runner.py:85} INFO - Job 21: Subtask upload_file
+[2023-08-08T10:18:18.769+0000] {task_command.py:410} INFO - Running <TaskInstance: local_gcd_gbq.upload_file manual__2023-08-08T10:18:17.524123+00:00 [running]> on host eb6c146e2e2c
+[2023-08-08T10:18:18.821+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='local_gcd_gbq' AIRFLOW_CTX_TASK_ID='upload_file' AIRFLOW_CTX_EXECUTION_DATE='2023-08-08T10:18:17.524123+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-08-08T10:18:17.524123+00:00'
+[2023-08-08T10:18:18.828+0000] {base.py:73} INFO - Using connection ID 'admin' for task execution.
+[2023-08-08T10:18:20.178+0000] {gcs.py:499} ERROR - Upload attempt of object: mock_users.csv from mock_users.csv has failed. Attempt: 1, max 1.
+[2023-08-08T10:18:20.178+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 2553, in upload_from_file
+    retry=retry,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 2368, in _do_upload
+    retry=retry,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 1891, in _do_multipart_upload
+    transport, data, object_metadata, content_type, timeout=timeout
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/requests/upload.py", line 154, in transmit
+    retriable_request, self._get_status_code, self._retry_strategy
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/requests/_request_helpers.py", line 155, in wait_and_retry
+    response = func()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/requests/upload.py", line 149, in retriable_request
+    self._process_response(result)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/_upload.py", line 114, in _process_response
+    _helpers.require_status_code(response, (http.client.OK,), self._get_status_code)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/resumable_media/_helpers.py", line 113, in require_status_code
+    *status_codes
+google.resumable_media.common.InvalidResponse: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/transfers/local_to_gcs.py", line 116, in execute
+    gzip=self.gzip,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 533, in upload
+    partial(blob.upload_from_filename, filename=filename, content_type=mime_type, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 501, in _call_with_retry
+    raise e
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 490, in _call_with_retry
+    f()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 2697, in upload_from_filename
+    retry=retry,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 2557, in upload_from_file
+    _raise_from_invalid_response(exc)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/storage/blob.py", line 4373, in _raise_from_invalid_response
+    raise exceptions.from_http_status(response.status_code, message, response=response)
+google.api_core.exceptions.NotFound: 404 POST https://storage.googleapis.com/upload/storage/v1/b/dhuyvp/o?uploadType=multipart: {
+  "error": {
+    "code": 404,
+    "message": "The specified bucket does not exist.",
+    "errors": [
+      {
+        "message": "The specified bucket does not exist.",
+        "domain": "global",
+        "reason": "notFound"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>)
+[2023-08-08T10:18:20.186+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=local_gcd_gbq, task_id=upload_file, execution_date=20230808T101817, start_date=20230808T101818, end_date=20230808T101820
+[2023-08-08T10:18:20.195+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 21 for task upload_file (404 POST https://storage.googleapis.com/upload/storage/v1/b/dhuyvp/o?uploadType=multipart: {
+  "error": {
+    "code": 404,
+    "message": "The specified bucket does not exist.",
+    "errors": [
+      {
+        "message": "The specified bucket does not exist.",
+        "domain": "global",
+        "reason": "notFound"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 404, 'Expected one of', <HTTPStatus.OK: 200>); 132)
+[2023-08-08T10:18:20.235+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-08-08T10:18:20.247+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

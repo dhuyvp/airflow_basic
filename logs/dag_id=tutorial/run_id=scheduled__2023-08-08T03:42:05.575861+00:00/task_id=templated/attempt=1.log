@@ -1,0 +1,26 @@
+[2023-08-09T03:42:31.701+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tutorial.templated scheduled__2023-08-08T03:42:05.575861+00:00 [queued]>
+[2023-08-09T03:42:31.713+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tutorial.templated scheduled__2023-08-08T03:42:05.575861+00:00 [queued]>
+[2023-08-09T03:42:31.713+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-08-09T03:42:31.726+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): templated> on 2023-08-08 03:42:05.575861+00:00
+[2023-08-09T03:42:31.731+0000] {standard_task_runner.py:57} INFO - Started process 151 to run task
+[2023-08-09T03:42:31.734+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'tutorial', 'templated', 'scheduled__2023-08-08T03:42:05.575861+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/tutorial.py', '--cfg-path', '/tmp/tmpl18aqqr6']
+[2023-08-09T03:42:31.735+0000] {standard_task_runner.py:85} INFO - Job 38: Subtask templated
+[2023-08-09T03:42:31.774+0000] {task_command.py:410} INFO - Running <TaskInstance: tutorial.templated scheduled__2023-08-08T03:42:05.575861+00:00 [running]> on host 738c524d2ce7
+[2023-08-09T03:42:31.849+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='***@example.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='tutorial' AIRFLOW_CTX_TASK_ID='templated' AIRFLOW_CTX_EXECUTION_DATE='2023-08-08T03:42:05.575861+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-08T03:42:05.575861+00:00'
+[2023-08-09T03:42:31.850+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-09T03:42:31.851+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n\n    echo "2023-08-08"\n    echo "2023-08-15"\n\n    echo "2023-08-08"\n    echo "2023-08-15"\n\n    echo "2023-08-08"\n    echo "2023-08-15"\n\n    echo "2023-08-08"\n    echo "2023-08-15"\n\n    echo "2023-08-08"\n    echo "2023-08-15"\n']
+[2023-08-09T03:42:31.864+0000] {subprocess.py:86} INFO - Output:
+[2023-08-09T03:42:31.866+0000] {subprocess.py:93} INFO - 2023-08-08
+[2023-08-09T03:42:31.866+0000] {subprocess.py:93} INFO - 2023-08-15
+[2023-08-09T03:42:31.866+0000] {subprocess.py:93} INFO - 2023-08-08
+[2023-08-09T03:42:31.866+0000] {subprocess.py:93} INFO - 2023-08-15
+[2023-08-09T03:42:31.866+0000] {subprocess.py:93} INFO - 2023-08-08
+[2023-08-09T03:42:31.866+0000] {subprocess.py:93} INFO - 2023-08-15
+[2023-08-09T03:42:31.866+0000] {subprocess.py:93} INFO - 2023-08-08
+[2023-08-09T03:42:31.866+0000] {subprocess.py:93} INFO - 2023-08-15
+[2023-08-09T03:42:31.867+0000] {subprocess.py:93} INFO - 2023-08-08
+[2023-08-09T03:42:31.867+0000] {subprocess.py:93} INFO - 2023-08-15
+[2023-08-09T03:42:31.867+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-09T03:42:31.895+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=tutorial, task_id=templated, execution_date=20230808T034205, start_date=20230809T034231, end_date=20230809T034231
+[2023-08-09T03:42:31.946+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-08-09T03:42:31.963+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

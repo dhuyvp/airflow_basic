@@ -1,0 +1,17 @@
+[2023-08-09T05:04:22.167+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: local_gcd_etl_basic.create_dataset manual__2023-08-09T05:04:17.175714+00:00 [queued]>
+[2023-08-09T05:04:22.178+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: local_gcd_etl_basic.create_dataset manual__2023-08-09T05:04:17.175714+00:00 [queued]>
+[2023-08-09T05:04:22.179+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-08-09T05:04:22.189+0000] {taskinstance.py:1327} INFO - Executing <Task(BigQueryCreateEmptyDatasetOperator): create_dataset> on 2023-08-09 05:04:17.175714+00:00
+[2023-08-09T05:04:22.195+0000] {standard_task_runner.py:57} INFO - Started process 1724 to run task
+[2023-08-09T05:04:22.198+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'local_gcd_etl_basic', 'create_dataset', 'manual__2023-08-09T05:04:17.175714+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/example_gcs_upload_download.py', '--cfg-path', '/tmp/tmpfcceu0_e']
+[2023-08-09T05:04:22.200+0000] {standard_task_runner.py:85} INFO - Job 73: Subtask create_dataset
+[2023-08-09T05:04:22.234+0000] {task_command.py:410} INFO - Running <TaskInstance: local_gcd_etl_basic.create_dataset manual__2023-08-09T05:04:17.175714+00:00 [running]> on host 738c524d2ce7
+[2023-08-09T05:04:22.296+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='local_gcd_etl_basic' AIRFLOW_CTX_TASK_ID='create_dataset' AIRFLOW_CTX_EXECUTION_DATE='2023-08-09T05:04:17.175714+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-08-09T05:04:17.175714+00:00'
+[2023-08-09T05:04:22.302+0000] {base.py:73} INFO - Using connection ID 'admin' for task execution.
+[2023-08-09T05:04:22.305+0000] {bigquery.py:462} INFO - datasetId was not specified in `dataset_reference`. Will use default value dhuyvp_dataset.
+[2023-08-09T05:04:22.305+0000] {bigquery.py:462} INFO - projectId was not specified in `dataset_reference`. Will use default value lucky-altar-388615.
+[2023-08-09T05:04:22.305+0000] {bigquery.py:472} INFO - Creating dataset: dhuyvp_dataset in project: lucky-altar-388615 
+[2023-08-09T05:04:23.132+0000] {bigquery.py:1904} INFO - Dataset dhuyvp_dataset already exists.
+[2023-08-09T05:04:23.149+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=local_gcd_etl_basic, task_id=create_dataset, execution_date=20230809T050417, start_date=20230809T050422, end_date=20230809T050423
+[2023-08-09T05:04:23.171+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-08-09T05:04:23.191+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

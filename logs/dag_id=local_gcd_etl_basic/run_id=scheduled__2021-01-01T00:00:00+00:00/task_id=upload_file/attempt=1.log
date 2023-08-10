@@ -1,0 +1,14 @@
+[2023-08-09T03:51:22.617+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: local_gcd_etl_basic.upload_file scheduled__2021-01-01T00:00:00+00:00 [queued]>
+[2023-08-09T03:51:22.636+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: local_gcd_etl_basic.upload_file scheduled__2021-01-01T00:00:00+00:00 [queued]>
+[2023-08-09T03:51:22.636+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-08-09T03:51:22.669+0000] {taskinstance.py:1327} INFO - Executing <Task(LocalFilesystemToGCSOperator): upload_file> on 2021-01-01 00:00:00+00:00
+[2023-08-09T03:51:22.679+0000] {standard_task_runner.py:57} INFO - Started process 322 to run task
+[2023-08-09T03:51:22.685+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'local_gcd_etl_basic', 'upload_file', 'scheduled__2021-01-01T00:00:00+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/example_gcs_upload_download.py', '--cfg-path', '/tmp/tmpu33w3vfd']
+[2023-08-09T03:51:22.688+0000] {standard_task_runner.py:85} INFO - Job 42: Subtask upload_file
+[2023-08-09T03:51:22.749+0000] {task_command.py:410} INFO - Running <TaskInstance: local_gcd_etl_basic.upload_file scheduled__2021-01-01T00:00:00+00:00 [running]> on host 738c524d2ce7
+[2023-08-09T03:51:22.905+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='local_gcd_etl_basic' AIRFLOW_CTX_TASK_ID='upload_file' AIRFLOW_CTX_EXECUTION_DATE='2021-01-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2021-01-01T00:00:00+00:00'
+[2023-08-09T03:51:22.913+0000] {base.py:73} INFO - Using connection ID 'admin' for task execution.
+[2023-08-09T03:51:24.635+0000] {gcs.py:538} INFO - File /opt/***/dags/resources/mock_users.csv uploaded to mock_users.csv in dhuyvp_bucket bucket
+[2023-08-09T03:51:24.654+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=local_gcd_etl_basic, task_id=upload_file, execution_date=20210101T000000, start_date=20230809T035122, end_date=20230809T035124
+[2023-08-09T03:51:24.701+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-08-09T03:51:24.746+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check
